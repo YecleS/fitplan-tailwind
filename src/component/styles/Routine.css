@@ -1,0 +1,30 @@
+.routine__body-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.schedule-div-template__card-options {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    bottom: 10px;
+    right: -20px;
+    position: absolute;
+    background: white;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.schedule-div-template__card-options li:last-child::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    background: rgb(146, 146, 146);
+    height: 1px;
+}

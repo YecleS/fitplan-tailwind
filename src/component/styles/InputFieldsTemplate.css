@@ -1,0 +1,56 @@
+/* REGULAR FIELD STYLES */
+.regular-input-field__icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.regular-input-field__input-field {
+    border: 1px solid black;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.regular-input-field__input-field:focus {
+    box-shadow:  0 0 3px 3px rgb(235, 35, 21);
+}
+
+
+
+/* PASSWORD FIELD STYLES */
+.fa-lock {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.fa-eye, 
+.fa-eye-slash {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fa-eye:hover {
+    color: var(--red-color);
+}
+
+.fa-eye-slash:hover {
+    color: var(--red-color);
+}
+
+
+.password-input-field__input-field {
+    border: 1px solid black;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.password-input-field__input-field:focus {
+    box-shadow:  0 0 3px 3px rgba(235, 35, 21, 0.726);
+}

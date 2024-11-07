@@ -1,0 +1,14 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../assets/heroBG.png');
+    height: 100svh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero__text-overlay {
+    font-size: clamp(1.5rem, 20vw, 14rem);
+}

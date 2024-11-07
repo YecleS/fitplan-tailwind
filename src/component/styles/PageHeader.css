@@ -1,0 +1,6 @@
+.page__header {
+    background: url(../assets/page-header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}

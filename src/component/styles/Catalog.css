@@ -1,0 +1,14 @@
+.catalog__filter-icon-wrapper:hover {
+    background: white;
+    border: 1px solid var(--red-color);
+}
+
+.catalog__filter-icon-wrapper:hover .fa-filter {
+    color: var(--red-color);
+}
+
+.catalog__cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}

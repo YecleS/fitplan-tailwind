@@ -1,0 +1,27 @@
+.header-link-template__link::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    background: var(--red-color);
+    height: 2px;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+.header-link-template__link:hover::after {
+    width: 100%;
+}
+
+.header-link-template__link-active::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    background: var(--red-color);
+    height: 2px;
+    width: 0;
+    transition: all 0.3s ease;
+}

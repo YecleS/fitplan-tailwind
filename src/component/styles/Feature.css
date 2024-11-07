@@ -1,0 +1,6 @@
+.feature__card-wrapper:hover .feature__icon-wrapper {
+    transition: all;
+    background: white;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+}
