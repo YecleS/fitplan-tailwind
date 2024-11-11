@@ -10,28 +10,30 @@ import { UserContext } from '../utils/UtilContext';
 const ExerciseDetails = () => {
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
-    const {id, name} = useParams();
+    const { id } = useParams();
     const spinnerDialog = useRef();
     const submitModal = useRef();
-    const [selectedExercise, setSelectedExercise] = useState([])
+    const [selectedExercise, setSelectedExercise] = useState({})
 
     useEffect(() => {
         const fetchWorkouts = async() => {
             spinnerDialog.current.showModal();
             
             try {
-                const response = await fetch('https://fit-plan.lovestoblog.com/db_getWorkoutCatalog.php', {
-                    method: 'GET',
+                const response = await fetch('https://fit-plan.lovestoblog.com/db_getWorkoutDetails.php', {
+                    method: 'POST',
                     headers: {
                         'Content-Type':'application/json',
                     },
+
+                    body: JSON.stringify({ workout_id: id })
                 });
     
                 const result = await response.json();
                 if(result.success){
-                    setSelectedExercise(result.success.find(exercise => exercise.id === Number(id)))  
-                }else {
-                    console.error(result);
+                    setSelectedExercise(result.success);
+                }else if(result.warning) {
+                    setSelectedExercise({});
                 }
    
             }catch(error){
@@ -43,7 +45,7 @@ const ExerciseDetails = () => {
         }
 
         fetchWorkouts();
-    }, [])
+    }, []);
 
     const toggleAddToRoutineModal = () => {
         if(submitModal.current.open){
@@ -58,7 +60,7 @@ const ExerciseDetails = () => {
             <PageHeader pageTitle='Know Your Exercise' pageDescription='Detailed Information On Your Chosen Exercise' />
             <div className='max-w-[1100px] min-h-[70vh] mt-[5rem] mx-auto px-[1rem]'>
                 {
-                    selectedExercise ? 
+                    Object.keys(selectedExercise).length > 0 ?
                     (
                         <div className='grid grid-cols-1 max-w-[1100px] mt-[1rem] gap-[2rem] md:grid-cols-2'>
                             <div>

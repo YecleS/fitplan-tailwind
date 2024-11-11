@@ -65,7 +65,7 @@ const AddToRoutineModal = ({selectedExercise, onClick}) => {
       try {
         await validationSchema.validate(formData, {abortEarly: false});
 
-        const response = await fetch('http://localhost/fitplan_backend/db_insertRoutine.php', {
+        const response = await fetch('https://fit-plan.lovestoblog.com/db_insertRoutine.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

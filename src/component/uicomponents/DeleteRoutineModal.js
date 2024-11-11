@@ -6,7 +6,7 @@ const DeleteRoutineModal = ({selectedExercise, onClick, fetchRoutine}) => {
     
     const submit = async() => {
         try {
-            const response = await fetch('http://localhost/fitplan_backend/db_deleteRoutine.php', {
+            const response = await fetch('https://fit-plan.lovestoblog.com/db_deleteRoutine.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

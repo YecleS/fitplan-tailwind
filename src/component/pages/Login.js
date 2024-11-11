@@ -67,6 +67,7 @@ const Login = () => {
             'Content-Type': 'application/json',
           },
           body:JSON.stringify(formData),
+          mode: 'cors',
         })
 
         const result = await response.json();
