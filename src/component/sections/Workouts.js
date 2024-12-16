@@ -5,6 +5,7 @@ import { ButtonSolidTemplate } from '../uicomponents/ButtonTemplate';
 import { useNavigate } from 'react-router-dom';
 
 const Workouts = () => {
+    const apiUrl = process.env.REACT_APP_API_URL;
     const navigate = useNavigate();
     const [workouts, setWorkouts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +13,7 @@ const Workouts = () => {
     useEffect(() => {
         const fetchWorkouts = async() => {
             try {
-                const response = await fetch('https://fit-plan.lovestoblog.com/db_getWorkoutsSection.php', {
+                const response = await fetch(`${apiUrl}/fitplan_backend/db_getWorkoutsSection.php`, {
                     method: 'GET',
                     headers: {
                         'Content-Type':'application/json',

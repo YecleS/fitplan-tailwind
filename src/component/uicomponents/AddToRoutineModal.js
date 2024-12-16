@@ -6,6 +6,7 @@ import { UserContext } from '../utils/UtilContext';
 import { AlertsSuccess, AlertError } from './Alerts';
 
 const AddToRoutineModal = ({selectedExercise, onClick}) => {
+  const apiUrl = process.env.REACT_APP_API_URL;
     const { user } = useContext(UserContext);
     const [formattedError, setFormattedError] = useState({});
     const [formData, setFormData] = useState({
@@ -65,7 +66,7 @@ const AddToRoutineModal = ({selectedExercise, onClick}) => {
       try {
         await validationSchema.validate(formData, {abortEarly: false});
 
-        const response = await fetch('https://fit-plan.lovestoblog.com/db_insertRoutine.php', {
+        const response = await fetch(`${apiUrl}/fitplan_backend/db_insertRoutine.php`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

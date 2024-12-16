@@ -11,6 +11,7 @@ import EditRoutineModal from '../uicomponents/EditRoutineModal';
 import DeleteRoutineModal from '../uicomponents/DeleteRoutineModal';
 
 const Routine = () => {
+    const apiUrl = process.env.REACT_APP_API_URL;
     const { user } = useContext(UserContext);
     const [routines, setRoutines] = useState([]);
     const [userData, setUserData] = useState({});
@@ -29,7 +30,7 @@ const Routine = () => {
         spinnerDialog.current.showModal();
         
         try {
-            const response = await fetch('https://fit-plan.lovestoblog.com/db_getRoutines.php', {
+            const response = await fetch(`${apiUrl}/fitplan_backend/db_getRoutines.php`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

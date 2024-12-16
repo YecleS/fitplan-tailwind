@@ -3,10 +3,11 @@ import { ButtonSolidTemplate, ButtonTransparentTemplate } from './ButtonTemplate
 import { AlertsSuccess, AlertError } from './Alerts';
 
 const DeleteRoutineModal = ({selectedExercise, onClick, fetchRoutine}) => {
-    
+  const apiUrl = process.env.REACT_APP_API_URL;
+  
     const submit = async() => {
         try {
-            const response = await fetch('https://fit-plan.lovestoblog.com/db_deleteRoutine.php', {
+            const response = await fetch(`${apiUrl}/fitplan_backend/db_deleteRoutine.php`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

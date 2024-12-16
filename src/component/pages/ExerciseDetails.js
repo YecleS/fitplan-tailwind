@@ -17,10 +17,11 @@ const ExerciseDetails = () => {
 
     useEffect(() => {
         const fetchWorkouts = async() => {
+            const apiUrl = process.env.REACT_APP_API_URL;
             spinnerDialog.current.showModal();
             
             try {
-                const response = await fetch('https://fit-plan.lovestoblog.com/db_getWorkoutDetails.php', {
+                const response = await fetch(`${apiUrl}/fitplan_backend/db_getWorkoutDetails.php`, {
                     method: 'POST',
                     headers: {
                         'Content-Type':'application/json',

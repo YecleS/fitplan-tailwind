@@ -6,6 +6,7 @@ import Footer from '../sections/Footer';
 import CatalogFilter from '../uicomponents/CatalogFilter';
 
 const Catalog = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [workouts, setWorkouts] = useState([]);
   const [loaded, isLoaded] = useState(false);
   const [search, setSearch] = useState('');
@@ -27,7 +28,7 @@ const Catalog = () => {
   useEffect(() => {
     const fetchWorkouts = async() => {
       try { 
-        const response = await fetch('https://fit-plan.lovestoblog.com/db_getWorkoutCatalog.php', {
+        const response = await fetch(`${apiUrl}/fitplan_backend/db_getWorkoutCatalog.php`, {
           method: 'GET',
           headers: {
               'Content-Type':'application/json',

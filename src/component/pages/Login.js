@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../uicomponents/LoadingSpinner';
 
 const Login = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const { user, setAndStoreUser } = useContext(UserContext);
   //State for containing validation errors
   const [formattedError, setFormattedError] = useState({});
@@ -61,7 +62,7 @@ const Login = () => {
       try {
         await validationSchema.validate(formData, {abortEarly: false});
 
-        const response = await fetch('https://fit-plan.lovestoblog.com/db_login.php', {
+        const response = await fetch(`${apiUrl}/fitplan_backend/db_login.php`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { AlertsSuccess, AlertError } from './Alerts';
 
 const EditRoutineModal = ({selectedExercise, onClick, fetchRoutine}) => {
+    const apiUrl = process.env.REACT_APP_API_URL;
     const [formattedError, setFormattedError] = useState({});
     const [formData, setFormData] = useState({
         routine_id: selectedExercise.routine_id,
@@ -73,7 +74,7 @@ const EditRoutineModal = ({selectedExercise, onClick, fetchRoutine}) => {
         try {
             await validationSchema.validate(formData, {abortEarly: false});
 
-            const response = await fetch('https://fit-plan.lovestoblog.com/db_updateRoutine.php', {
+            const response = await fetch(`${apiUrl}/fitplan_backend/db_updateRoutine.php`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

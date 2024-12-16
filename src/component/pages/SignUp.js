@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../uicomponents/LoadingSpinner';
 
 const SignUp = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
   //Consume the context
   const { user, setAndStoreUser } = useContext(UserContext);
   //Navigate hook
@@ -63,7 +64,7 @@ const SignUp = () => {
       try{
         await validationSchema.validate(formData, {abortEarly: false});
 
-        const response = await fetch('https://fit-plan.lovestoblog.com/db_register.php', {
+        const response = await fetch(`${apiUrl}/fitplan_backend/db_register.php`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
