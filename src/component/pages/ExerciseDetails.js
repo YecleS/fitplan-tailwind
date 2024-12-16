@@ -59,7 +59,7 @@ const ExerciseDetails = () => {
     return (
         <div>
             <PageHeader pageTitle='Know Your Exercise' pageDescription='Detailed Information On Your Chosen Exercise' />
-            <div className='max-w-[1100px] min-h-[70vh] mt-[5rem] mx-auto px-[1rem]'>
+            <div className='max-w-[1100px] min-h-[90vh] mt-[5rem] mx-auto px-[1rem] pb-[5rem]'>
                 {
                     Object.keys(selectedExercise).length > 0 ?
                     (

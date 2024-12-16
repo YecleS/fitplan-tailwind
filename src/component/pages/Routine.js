@@ -118,7 +118,7 @@ export const ScheduleContainerTemplate = ({day, children}) => {
                 <h1 className='text-[1.1rem] font-[700] uppercase'>{day}</h1>
             </div>
 
-            <div className='min-w-[100%]'>
+            <div className='w-[150px] md:w-[100%]'>
                 {children}
             </div>
         </div>
